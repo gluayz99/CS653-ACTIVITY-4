@@ -33,5 +33,5 @@ git add .
 git commit -m 'bra bra bra'
 
 #push
-git push -u origin <branch>
+git push
 ```
