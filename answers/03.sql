@@ -1,5 +1,5 @@
 SELECT *
-FROM albums
-WHERE release_year IS NOT NULL
-ORDER BY release_year ASC
+FROM albums a
+WHERE a.release_year IS NOT NULL
+ORDER BY a.release_year ASC
 LIMIT 1;
