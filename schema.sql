@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS record_company;
 CREATE DATABASE record_company;
 USE record_company;
 

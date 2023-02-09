@@ -1,18 +1,7 @@
-# Learn SQL
-If you haven't already make sure you watch [this video](https://youtu.be/p3qvj9hO_Bo) which will teach you all the basics of SQL in 60 minutes.
-
-After watching the video try to complete the exercises listed below using the data provided in this repository.
-
-All of the solutions are available in the repository, and [this video](https://youtu.be/30W5wjgJR08) goes over all of the solutions.
-
-## Setup
-First drop your existing database that was created in the tutorial. `DROP DATABASE record_company;`
-
-Copy the code inside the [schema.sql](schema.sql) file, paste it into MySQL Workbench, and run it. (This file contains the code necessary to create and add the tables from the tutorial video)
+# CS653 ACTIVITY#4
 
 ## Exercises
 ### 1. Create a Songs Table
-[Solution](solutions/1.sql)
 
 This table should be called `songs` and have four properties with these exact names.
 1. `id`: An integer that is the primary key, and auto increments.
@@ -22,8 +11,15 @@ This table should be called `songs` and have four properties with these exact na
 
 After successfully creating the table copy the code from [data.sql](data.sql) into MySQL Workbench, and run it to populate all of the data for the rest of the exercises. If you do not encounter any errors, then your answer is most likely correct.
 
+
+[Answer](answers/01.sql)
+
+Create songs table
+![Screenshot](screenshot/01-01.png)
+Insert data
+![Screenshot](screenshot/01-02.png)
+
 ### 2. Select only the Names of all the Bands
-[Solution](solutions/2.sql)
 
 Change the name of the column the data returns to `Band Name`
 
@@ -37,8 +33,11 @@ Change the name of the column the data returns to `Band Name`
 | Van Canto         | 
 | Dream Theater     | 
 
+[Answer](answers/02.sql)
+
+![Screenshot](screenshot/02.png)
+
 ### 3. Select the Oldest Album
-[Solution](solutions/3.sql)
 
 Make sure to only return one result from this query, and that you are not returning any albums that do not have a release year.
 
@@ -46,8 +45,11 @@ Make sure to only return one result from this query, and that you are not return
 |----|------------------------|--------------|---------| 
 | 5  | ...And Justice for All | 1988         | 2       | 
 
+[Answer](answers/03.sql)
+
+![Screenshot](screenshot/03.png)
+
 ### 4. Get all Bands that have Albums
-[Solution](solutions/4.sql)
 
 There are multiple different ways to solve this problem, but they will all involve a join.
 
@@ -62,8 +64,11 @@ Return the band name as `Band Name`.
 | Death             | 
 | Van Canto         | 
 
+[Answer](answers/04.sql)
+
+![Screenshot](screenshot/04.png)
+
 ### 5. Get all Bands that have No Albums
-[Solution](solutions/5.sql)
 
 This is very similar to #4 but will require more than just a join.
 
@@ -73,8 +78,11 @@ Return the band name as `Band Name`.
 |---------------| 
 | Dream Theater | 
 
+[Answer](answers/05.sql)
+
+![Screenshot](screenshot/05.png)
+
 ### 6. Get the Longest Album
-[Solution](solutions/6.sql)
 
 This problem sounds a lot like #3 but the solution is quite a bit different. I would recommend looking up the SUM aggregate function.
 
@@ -84,25 +92,37 @@ Return the album name as `Name`, the album release year as `Release Year`, and t
 |----------------|--------------|-------------------| 
 | Death Magnetic | 2008         | 74.76666593551636 | 
 
+[Answer](answers/06.sql)
+
+![Screenshot](screenshot/06.png)
+
 ### 7. Update the Release Year of the Album with no Release Year
-[Solution](solutions/7.sql)
 
 Set the release year to 1986.
 
 You may run into an error if you try to update the release year by using `release_year IS NULL` in the WHERE statement of your UPDATE. This is because MySQL Workbench by default will not let you update a table that has a primary key without using the primary key in the UPDATE statement. This is a good thing since you almost never want to update rows without using the primary key, so to get around this error make sure to use the primary key of the row you want to update in the WHERE of the UPDATE statement.
 
+[Answer](answers/07.sql)
+
+![Screenshot](screenshot/07.png)
+
 ### 8. Insert a record for your favorite Band and one of their Albums
-[Solution](solutions/8.sql)
 
 If you performed this correctly you should be able to now see that band and album in your tables.
 
+[Answer](answers/08.sql)
+
+![Screenshot](screenshot/08.png)
+
 ### 9. Delete the Band and Album you added in #8
-[Solution](solutions/9.sql)
 
 The order of how you delete the records is important since album has a foreign key to band.
 
+[Answer](answers/09.sql)
+
+![Screenshot](screenshot/09.png)
+
 ### 10. Get the Average Length of all Songs
-[Solution](solutions/10.sql)
 
 Return the average length as `Average Song Duration`.
 
@@ -110,9 +130,12 @@ Return the average length as `Average Song Duration`.
 |-----------------------| 
 | 5.352472513259112     | 
 
+[Answer](answers/10.sql)
+
+![Screenshot](screenshot/10.png)
+
 
 ### 11. Select the longest Song off each Album
-[Solution](solutions/11.sql)
 
 Return the album name as `Album`, the album release year as `Release Year`, and the longest song length as `Duration`.
 
@@ -137,8 +160,11 @@ Return the album name as `Album`, the album release year as `Release Year`, and 
 | Break the Silence           | 2011         | 6.15     | 
 | Tribe of Force              | 2010         | 8.38333  | 
 
+[Answer](answers/11.sql)
+
+![Screenshot](screenshot/11.png)
+
 ### 12. Get the number of Songs for each Band
-[Solution](solutions/12.sql)
 
 This is one of the toughest question on the list. It will require you to chain together two joins instead of just one.
 
@@ -152,3 +178,7 @@ Return the band name as `Band`, the number of songs as `Number of Songs`.
 | Within Temptation | 30              | 
 | Death             | 27              | 
 | Van Canto         | 32              | 
+
+[Answer](answers/12.sql)
+
+![Screenshot](screenshot/12.png)
